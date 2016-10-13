@@ -31,12 +31,12 @@ Use the *"Deploy to Bluemix"* button below, to deploy this app to Bluemix using 
   ```
   applications:
   - path: .
-    memory: 128M
+    memory: 768M
     instances: 1
     domain: mybluemix.net
     name: node-js-1234
   # host: node-js-1234
-    disk_quota: 256M
+    disk_quota: 1024M
   ```
   The host you use will determinate your application URL initially, for example, `<host>.mybluemix.net`.
 
@@ -55,14 +55,6 @@ Use the *"Deploy to Bluemix"* button below, to deploy this app to Bluemix using 
 
 You now have your own instance of the app running on Bluemix.  
 
-
-## Run the app locally
-1. [Install Node.js][]
-2. Clone the app to your local environment from your terminal using the following command: - `git clone https://github.com/ibm-watson-iot/iot-climate-control-sample.git`
-3. cd into your local environment app directory
-4. Run `npm install` to install the app's dependencies
-5. Run `npm start` to start the app
-6. Access the running app in a browser at http://localhost:6001
 
 
 ## Useful links
