@@ -85,7 +85,6 @@ label: function() {
 	return (this.deviceType) ? this.deviceType + " Schema" : "device schema";
 },
 oneditprepare: function() {
-	console.log("schema");
 	var node = this;
 
 	node.getEvents = function(){
@@ -156,8 +155,6 @@ oneditprepare: function() {
 	node.onPropertiesChange = function(){
 		//update all events payload
 		var properties = node.getProperties();
-		console.log(properties);
-
 		var evts = $("#node-input-evts-container").editableList('items');
 		var events = [];
 		evts.each(function(i) {
