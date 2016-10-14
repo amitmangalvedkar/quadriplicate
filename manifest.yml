@@ -5,7 +5,7 @@ applications:
   - iottool-IoT-devx
   memory: 768M
   instances: 1
-  name: iottooltest1
+  name: iottool
   disk_quota: 1024M
 declared-services:
   iottool-cloudantNoSQLDB-devx:

@@ -6,15 +6,14 @@ if (!window.location.origin) {
     + (window.location.port ? ':' + window.location.port : '');
 }
 
-var simulatorURLencoded = window.location.origin + "/ui/%23/1";
+var simulatorURLencoded = window.location.origin + "/ui/%23/0";
 
 //Fill in the simulator URL in span
-var simulatorURL = window.location.origin + "/ui/#/1";
+var simulatorURL = window.location.origin + "/ui/#/0";
 document.getElementById("simurl").innerHTML = "<a href="+ simulatorURL +" target=\"_blank\">" + simulatorURL + "</a>";
-//email link
-document.getElementById("mailme").href = "mailto:?subject=Simulator%20URL&body=Navigate%20to%20-%20" + simulatorURLencoded + "%20for%20simulating%20your%20devices";
 
-// Fill in the QR image
+
+// Request and insert the QR image
 var xhttp = new XMLHttpRequest();
 xhttp.onreadystatechange = function() {
 	if (this.readyState == 4 && this.status == 200) {
@@ -27,3 +26,20 @@ xhttp.open("GET", "/qr?url="+simulatorURLencoded, true);
 
 xhttp.responseType = "blob";
 xhttp.send();
+
+//Onload, use dummy mailto
+/* TODO: move text to content space */
+document.getElementById("mailme").href = "mailto:?subject=Simulator%20URL&body=Navigate%20to%20-%20" + simulatorURLencoded + "%20for%20simulating%20your%20devices";
+
+function enableSendButton()
+{
+  var toEmailAddress = document.getElementById("mailme");
+
+}
+
+function updateEmailAddress() {
+  var toEmailAddress = document.getElementById("toEmailAddress");
+  //email link
+  /* TODO: move text to content space */
+  document.getElementById("mailme").href = "mailto:" + toEmailAddress.value +"?subject=Simulator%20URL&body=Navigate%20to%20-%20" + simulatorURLencoded + "%20for%20simulating%20your%20devices";
+}
