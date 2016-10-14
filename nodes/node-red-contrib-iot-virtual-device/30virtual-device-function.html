@@ -68,7 +68,6 @@ To set/get a property value, just type the property name. For example:
 
 
 <script type="text/javascript">
-console.log("device function");
 RED.nodes.registerType('device function',{
 	category: 'Virtual_IoT_Device',
 	color:"#B277B1",
@@ -108,7 +107,6 @@ RED.nodes.registerType('device function',{
 		this.noerr = 0;
 		$("#node-input-noerr").val(0);
 		for (var k=0; k < annot.length; k++) {
-			//console.log(annot[k].type,":",annot[k].text, "on line", annot[k].row);
 			if (annot[k].type === "error") {
 				$("#node-input-noerr").val(annot.length);
 				this.noerr = annot.length;
